@@ -5,11 +5,11 @@ SELECT employees.name,SUM(commission_amount) AS total_commision from employees
 INNER JOIN commissions
 ON commissions.employee_id = employees.id
 GROUP BY employee_id)combined
-LIMIT 1
+LIMIT 1;
 
 SELECT * from employees
 GROUP BY salary
-LIMIT 3,1
+LIMIT 3,1;
 
 SELECT departments.name, SUM(commission_amount)from departments
 INNER JOIN employees
@@ -24,4 +24,4 @@ SELECT employees.name,SUM(commission_amount) AS total_commision from employees
 INNER JOIN commissions
 ON commissions.employee_id = employees.id
 GROUP BY employee_id)combined
-WHERE total_commision > 4000 
+WHERE total_commision > 4000;
