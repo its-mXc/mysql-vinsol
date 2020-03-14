@@ -1,0 +1,27 @@
+/* ----- 1 ----- */
+id - sequential indentifier for each select query
+
+select_type - type of select query, Possible values(SIMPLE, PRIMARY, DERIVED...)
+
+table - table referred to by the row
+
+type - how MySQL join the table used, Possible values(system, const, eq_ref, ALL ...)
+
+possible_keys – shows the keys that can be used by MySQL to find rows from the table, though they may or may not be used in practice
+
+keys - indicates the actual index used by MySQL
+
+key_len - indicates the length of index Query Optimizer chose to use.
+
+ref – Shows the columns or constants that are compared to the index named in the key column
+
+rows – lists the number of records that were examined to produce the output.
+
+Extra – contains additional information regarding the query execution plan. Possible valies(using temporary, using filesort, ...)
+
+/* ----- 2 ----- */
+It means that we are scanning the whole table for a particular user_id which is not optimal.
+To make it optimal we can use PRIMARY KEY on user_id.
+
+/* ----- 3 ----- */
+The order of index will be as user_id -> commentable_type -> commentable_id
