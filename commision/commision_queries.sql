@@ -21,8 +21,9 @@ GROUP BY department_id
 ORDER BY `SUM(commission_amount)` DESC
 LIMIT 1;
 
+SELECT GROUP_CONCAT(name,' ',total_commision) from (
 SELECT employees.name,SUM(commission_amount) AS total_commision from employees
 INNER JOIN commissions
 ON commissions.employee_id = employees.id
 GROUP BY employee_id
-HAVING total_commision > 4000;
+HAVING total_commision > 4000)combined;
