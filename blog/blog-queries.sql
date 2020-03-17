@@ -11,14 +11,14 @@ WHERE id = 7;
 DELETE FROM articles
 WHERE id = 7;
 
-INSERT INTO authors
+INSERT INTO users
 VALUES(7,'John');
 
-UPDATE authors
+UPDATE users
 SET name = 'John Doe'
 WHERE id = 7;
 
-DELETE FROM authors
+DELETE FROM users
 WHERE id = 7;
 
 INSERT INTO categories
@@ -42,23 +42,23 @@ DELETE FROM comments
 WHERE id = 10;
 /* 2 */
 SELECT * from articles
-INNER JOIN authors
-ON articles.id = authors.id
-WHERE name = 'Uday Nayak';
+INNER JOIN users
+ON articles.author_id = users.id
+WHERE users.name = 'Uday Nayak';
 
 SET @author_name = 'Uday Nayak';
 SELECT * from articles
-INNER JOIN authors
-ON articles.id = authors.id
-WHERE name = @author_name;
+INNER JOIN users
+ON articles.author_id = users.id
+WHERE users.name = @author_name;
 
 /* 3 */
 SELECT articles.id, heading, articles.content, comments.content AS comment from articles
 INNER JOIN comments
 ON comments.article_id = articles.id
-INNER JOIN authors
-ON articles.id = authors.id
-WHERE authors.name = 'Uday Nayak';
+INNER JOIN users
+ON articles.author_id = users.id
+WHERE users.name = 'Uday Nayak';
 
 
 /* 4 */
@@ -85,5 +85,5 @@ LIMIT 1;
 SELECT articles.id, articles.content from articles
 LEFT JOIN comments
 ON comments.article_id = articles.id
-GROUP BY user_id
+GROUP BY users_id
 HAVING COUNT(comments.content) = 1
