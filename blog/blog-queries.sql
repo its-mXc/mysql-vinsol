@@ -63,9 +63,9 @@ WHERE users.name = 'Uday Nayak';
 
 /* 4 */
 SELECT * from articles
-JOIN comments
+LEFT JOIN comments
 ON comments.article_id = articles.id
-WHERE comments.id is NOT NULL;
+WHERE comments.id is NULL;
 
 SELECT * from articles
 WHERE id NOT IN(
