@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `articles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `articles` (
-  `id` varchar(5) NOT NULL,
+  `id` varchar(5) NOT NULL AUTO_INCREMENT,
   `heading` varchar(100) DEFAULT NULL,
   `content` varchar(1000) DEFAULT NULL,
   `category_id` varchar(5) DEFAULT NULL,
@@ -54,7 +54,7 @@ DROP TABLE IF EXISTS `authors`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `authors` (
-  `id` varchar(5) NOT NULL,
+  `id` varchar(5) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -78,7 +78,7 @@ DROP TABLE IF EXISTS `categories`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `categories` (
-  `id` varchar(5) NOT NULL,
+  `id` varchar(5) NOT NULL AUTO_INCREMENT,
   `name` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -102,7 +102,7 @@ DROP TABLE IF EXISTS `comments`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `comments` (
-  `id` varchar(2) NOT NULL,
+  `id` varchar(2) NOT NULL AUTO_INCREMENT,
   `content` varchar(144) DEFAULT NULL,
   `article_id` varchar(2) DEFAULT NULL,
   `user_id` varchar(2) DEFAULT NULL,
