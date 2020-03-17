@@ -2,7 +2,7 @@ USE BLOG;
 
 /* 1 */
 INSERT INTO articles
-VALUES(7,'Corona','1st Dead in India'2,5);
+VALUES(7,'Corona','1st Dead in India',2,5);
 
 UPDATE articles
 SET heading = 'CORONA'
