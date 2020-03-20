@@ -40,4 +40,8 @@ WHERE CURDATE() > DATE_ADD(year, INTERVAL warranty MONTH);
 SELECT * from employees
 WHERE id NOT IN (
   SELECT emp_id from personal_assigned_assets
+) OR id NOT in (
+  SELECT emp_id from personal_assigned_assets
+  GROUP BY emp_id
+  HAVING COUNT(to_date IS NULL) >= 1
 );
